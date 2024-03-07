@@ -5,8 +5,21 @@ body {
     text-align: center;
     color: #333;
     font-size: 18px;
+    padding-top : 0;
+    margin-top : 0;
+    padding-right: 0;
+    padding-left : 0;
+    margin-left : 0;
   }
 
+  header {
+    /*background-color: #FE938C;*/
+    background-color: #94BFBE;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    margin: 0; /* Ensure there's no margin pushing the header down */
+}
   .logo{
     display: block;
     margin: 0 auto;
@@ -43,7 +56,7 @@ body {
 .button1:hover,
 .button1:focus,
 .button1:active {
-    background-color: #c3222a;
+    background-color: #2114cf;
     color: #fff;
 }
 
@@ -65,34 +78,72 @@ body {
     .button2:hover,
     .button2:focus,
     .button2:active {
-    background-color: #c3222a;
+    background-color: #b6db30;
     color: #fff;
 }
 
 .doctor{
 
     width: 200px;
-    height: 100px;
+    height: 250px;
   }
 
   .patient{
-    
     width: 200px;
-    height: 100px;
+    height: 250px;
    
   }
 
-  .container_doctor_and_patient {
+  /* Addded border for the divs, also figured out I could've done this for the buttons :( */
+
+  .doctor, .patient {
+    border: 5px solid #532e2e; 
+}
+
+  .container {
     display: flex;
     justify-content: center; /* Align items in the center */
     align-items: center;
+    margin-top : 50px;
     
-    gap: 200px; /* Adjust this value to increase or decrease the space between the divs */
+    gap: 200px; 
+}
+
+.intro , .intro2{
+    font-family: 'Arial', sans-serif; 
+    font-size: 24px; 
+    margin-top: 20px;
+}
+.intro2{
+    font-weight: bold;
 }
 
   
   
-  
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+ .doctor_icon{
+    width: 150px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.patient_icon{
+    width : 150px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
   
   
   
