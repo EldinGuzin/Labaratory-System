@@ -1,0 +1,98 @@
+body {
+    background-color: #edeff0;
+    font-family: "Helvetica", Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+  }
+
+  .logo{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;}
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: serif;
+    font-size: 42px;
+    font-weight: bold;
+  }
+
+  /* Style the buttons, added the hover effects for both buttons
+    it is a bit innefective since I repeated this for both buttons
+    but it works so I'm not changing it :)
+  */
+  
+  .button1{
+    display: inline-block;
+    background-color: #34ce4e;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 100px;
+    transition: background-color 200ms ease-in-out;
+    letter-spacing: 0.05em;
+    border: none;
+  }
+.button1:hover,
+.button1:focus,
+.button1:active {
+    background-color: #c3222a;
+    color: #fff;
+}
+
+.button2{
+    display: inline-block;
+    background-color: #e15258;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 100px;
+    transition: background-color 200ms ease-in-out;
+    letter-spacing: 0.05em;
+    border: none;
+  }
+
+    .button2:hover,
+    .button2:focus,
+    .button2:active {
+    background-color: #c3222a;
+    color: #fff;
+}
+
+.doctor{
+
+    width: 200px;
+    height: 100px;
+  }
+
+  .patient{
+    
+    width: 200px;
+    height: 100px;
+   
+  }
+
+  .container_doctor_and_patient {
+    display: flex;
+    justify-content: center; /* Align items in the center */
+    align-items: center;
+    
+    gap: 200px; /* Adjust this value to increase or decrease the space between the divs */
+}
+
+  
+  
+  
+  
+  
+  
