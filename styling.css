@@ -21,10 +21,16 @@ body {
     margin: 0; /* Ensure there's no margin pushing the header down */
 }
   .logo{
-    display: block;
-    margin: 0 auto;
     width: 150px;
     height: 150px;
+    transition: all .5s;
+    border: 3px solid white;
+    border-radius : 50%;
+}
+
+.logo:hover{
+    transform: scale(1.2) rotate(360deg);
+    transition: 0.5s;
 }
   
   h1 {
@@ -146,5 +152,113 @@ footer {
     margin-left: 10px;
 }
   
-  
+input[type="submit"] {
+  display: inline-block;
+  background-color: #e15258;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top : 30px;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
+  background-color: #2522c3;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  font-weight:600;
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+} 
+.back{
+  display: inline-block;
+  background-color: #34ce4e;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top: 30px;
+}
+.back:hover,
+.back:focus,
+.back:active {
+  background-color: #2114cf;
+  color: #fff;
+}
+
+/*this doesn't look nice but it works */
+
+label[for="rbcCount"],
+label[for="number"],
+label[for="pcv"],
+label[for="mcv"],
+label[for="tlc"]
+label[for="neutrophils"],
+label[for="lymphocytes"],
+label[for="monocytes"],
+label[for="eosinophils"],
+label[for="hemoglobin"],
+label[for="name"],
+label[for="surname"],
+label[for="additionalNotes"] {
+  margin-top: 10px;
+  font-family:'Times New Roman', Times, serif;
+}
+label[for="basophils"]{
+  margin-top: 10px;
+  font-family:'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+.bloodTitles{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rbcParameters {
+  background-color: #CBD081; 
+  border: 2px solid #000;
+}
+
+.personalData{
+  background-color: #8A817C; 
+  border: 2px solid #000;
+  border-bottom : 0;
+}
+
+.wbcParams{
+  background-color: #DBF4A7; 
+  border: 2px solid #000;
+  border-bottom : 0;
+  border-top : 0;
+}
+.bloodDiff{
+  background-color: #FFA5AB; 
+  border: 2px solid #000;
+  border-bottom : 0;
+}
+
+.notes{
+  background-color: #F9DBBD; 
+  border: 2px solid #000;
+  border-top : 0;
+}
   
