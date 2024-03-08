@@ -13,7 +13,6 @@ body {
   }
 
   header {
-    /*background-color: #FE938C;*/
     background-color: #94BFBE;
     color: #fff;
     padding: 30px;
@@ -109,7 +108,7 @@ body {
 
   .container {
     display: flex;
-    justify-content: center; /* Align items in the center */
+    justify-content: center; 
     align-items: center;
     margin-top : 50px;
     
@@ -152,9 +151,26 @@ footer {
     margin-left: 10px;
 }
   
-input[type="submit"] {
+.submit1 {
   display: inline-block;
   background-color: #e15258;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top : 30px;
+}
+
+
+.submit2{
+  display: inline-block;
+  background-color: #34ce4e;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -262,3 +278,33 @@ label[for="basophils"]{
   border-top : 0;
 }
   
+
+.loginCont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.patientCont{
+  background-color: #b9bf94;
+}
+
+/*I have no idea why this is not working, I tried to make the form look nice but it's not working */
+/* So I'm just going to leave it like this for now */
+.loginform{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.patientFoot{
+  background-color: #333;
+  height: 100px;
+}
+
+
+
+
