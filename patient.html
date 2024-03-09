@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeDoc</title>
     <link rel="stylesheet" href="styling.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body class ="patientCont">
     <header><h1>Login</h1></header>
@@ -14,9 +14,9 @@
         <form method="post" action="/" class="loginform">
             <fieldset class="patientLogin">
             <label for="username">Username: </label>
-            <input type="text" name="username" id="username">
-            <label for="password">Password: </label>
-            <input type="password" name="password" id="password">
+            <input type="text" name="username" id="username" placeholder="Enter your username">
+            <label for="password">Password: (I could also change this to surname so that I don't have a login at all)</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
             </fieldset>
 
             <input type="submit" class="submit2" value="Login">
@@ -24,6 +24,8 @@
         
 
     </div>  
+    <a href="patientResult.html" class="submit2">View Results (this button will be removed this is only for testing)</a>
+    <br>
     
     <a href="/Labaratory-System" class="back">Back to Homepage</a>
 

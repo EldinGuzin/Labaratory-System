@@ -237,6 +237,48 @@ label[for="additionalNotes"] {
   margin-top: 10px;
   font-family:'Times New Roman', Times, serif;
 }
+
+
+input[name="rbcCount"],
+input[name="number"],
+input[name="pcv"],
+input[name="mcv"],
+input[name="neutrophils"],
+input[name="lymphocytes"],
+input[name="monocytes"],
+input[name="eosinophils"],
+input[name="hemoglobin"],
+input[name="additionalNotes"],
+input[name="basophils"] {
+  width: 10%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+input[name="tlc"]{
+  width: 10%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+input[name="name"],
+input[name="surname"] {
+
+  width: 20%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+
 label[for="basophils"]{
   margin-top: 10px;
   font-family:'Times New Roman', Times, serif;
@@ -290,14 +332,34 @@ label[for="basophils"]{
   background-color: #b9bf94;
 }
 
+.patientLogin{
+  border: none;
+}
+
 /*I have no idea why this is not working, I tried to make the form look nice but it's not working */
 /* So I'm just going to leave it like this for now */
-.loginform{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+
+/* Nevermind fixed it */
+.loginform {
+  width: 30%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  border: 1px solid #000; 
+  border-radius: 10px; 
+  background-color: #E8DAB2; 
+}
+
+label[for="username"]{
+  margin-top: 10px;
+}
+input[name="username"], 
+input[name="password"]{
+  width: 50%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
 }
 
 .patientFoot{
