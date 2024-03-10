@@ -328,7 +328,9 @@ label[for="basophils"]{
   margin-top: 50px;
 }
 
-.patientCont{
+
+
+.patientCont, .doctor_login, .signupCont{
   background-color: #b9bf94;
 }
 
@@ -349,11 +351,24 @@ label[for="basophils"]{
   background-color: #E8DAB2; 
 }
 
+.signupform{
+  width: 30%; 
+  margin: 50px auto; 
+  padding: 20px; 
+  border: 1px solid #000; 
+  border-radius: 10px; 
+  background-color: #E8DAB2; 
+}
+
 label[for="username"]{
   margin-top: 10px;
 }
 input[name="username"], 
-input[name="password"]{
+input[name="password"],
+input[name="password2"],
+input[name="email"],
+input[name="name"],
+input[name="surname"]{
   width: 50%; 
   padding: 10px; 
   border: 1px solid #000; 
@@ -372,5 +387,13 @@ input[name="password"]{
   border: none;
 }
 
+body {
+  overflow: auto;
+}
+
+
+.signupFieldset{
+  border: none;
+}
 
 
