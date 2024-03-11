@@ -486,3 +486,33 @@ body {
   padding-left : 0;
   margin-left : 0;
 }
+
+
+table {
+  margin: 0 auto; 
+  border-collapse: collapse; 
+  width: 40%; 
+  background-color: #f0f0f0; 
+}
+
+th, td {
+  border: 2px solid #000; 
+  padding: 10px; 
+  text-align: center; 
+  font-size : 30px;
+}
+
+th {
+  background-color: #b8b8b8; /* Changes the background color of the header cells */
+}
+
+.results{
+  margin-top: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.resultBody{
+  background-color: #215380;
+}
