@@ -1,0 +1,518 @@
+body {
+    background-color: #edeff0;
+    font-family: "Helvetica", Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    padding-top : 0;
+    margin-top : 0;
+    padding-right: 0;
+    padding-left : 0;
+    margin-left : 0;
+  }
+
+  header {
+    background-color: #94BFBE;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    margin: 0;
+}
+
+.doctorHeader{
+  background-color: #94BFBE;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+}
+  .logo{
+    width: 150px;
+    height: 150px;
+    transition: all .5s;
+    border: 3px solid white;
+    border-radius : 50%;
+}
+
+.logo:hover{
+    transform: scale(1.2) rotate(360deg);
+    transition: 0.5s;
+}
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: serif;
+    font-size: 42px;
+    font-weight: bold;
+  }
+
+  /* Style the buttons, added the hover effects for both buttons
+    it is a bit innefective since I repeated this for both buttons
+    but it works so I'm not changing it :)
+  */
+  
+  .button1{
+    display: inline-block;
+    background-color: #34ce4e;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 100px;
+    transition: background-color 200ms ease-in-out;
+    letter-spacing: 0.05em;
+    border: none;
+  }
+.button1:hover,
+.button1:focus,
+.button1:active {
+    background-color: #2114cf;
+    color: #fff;
+}
+
+.button2{
+    display: inline-block;
+    background-color: #e15258;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 100px;
+    transition: background-color 200ms ease-in-out;
+    letter-spacing: 0.05em;
+    border: none;
+  }
+
+    .button2:hover,
+    .button2:focus,
+    .button2:active {
+    background-color: #b6db30;
+    color: #fff;
+}
+
+.doctor{
+
+    width: 200px;
+    height: 250px;
+  }
+
+  .patient{
+    width: 200px;
+    height: 250px;
+   
+  }
+
+  /* Addded border for the divs, also figured out I could've done this for the buttons :( */
+
+  .doctor, .patient {
+    border: 5px solid #532e2e; 
+}
+
+  .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top : 50px;
+    
+    gap: 200px; 
+}
+
+.intro , .intro2{
+    font-family: 'Arial', sans-serif; 
+    font-size: 24px; 
+    margin-top: 20px;
+}
+.intro2{
+    font-weight: bold;
+}
+
+  
+  
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+ .doctor_icon{
+    width: 150px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.patient_icon{
+    width : 150px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+  
+.submit1 {
+  display: inline-block;
+  background-color: #e15258;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top : 30px;
+}
+
+
+.submit2{
+  display: inline-block;
+  background-color: #34ce4e;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top : 30px;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
+  background-color: #2522c3;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  font-weight:600;
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+} 
+.back{
+  display: inline-block;
+  background-color: #34ce4e;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top: 30px;
+}
+.back:hover,
+.back:focus,
+.back:active {
+  background-color: #2114cf;
+  color: #fff;
+}
+
+/*this doesn't look nice but it works */
+
+label[for="rbcCount"],
+label[for="number"],
+label[for="pcv"],
+label[for="mcv"],
+label[for="tlc"]
+label[for="neutrophils"],
+label[for="lymphocytes"],
+label[for="monocytes"],
+label[for="eosinophils"],
+label[for="hemoglobin"],
+label[for="name"],
+label[for="surname"],
+label[for="additionalNotes"] {
+  margin-top: 10px;
+  font-family:'Times New Roman', Times, serif;
+}
+
+
+input[name="rbcCount"],
+input[name="number"],
+input[name="pcv"],
+input[name="mcv"],
+input[name="neutrophils"],
+input[name="lymphocytes"],
+input[name="monocytes"],
+input[name="eosinophils"],
+input[name="hemoglobin"],
+input[name="additionalNotes"],
+input[name="basophils"] {
+  width: 10%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+input[name="tlc"]{
+  width: 10%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+input[name="name"],
+input[name="surname"] {
+
+  width: 20%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+
+label[for="basophils"]{
+  margin-top: 10px;
+  font-family:'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+.bloodTitles{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rbcParameters {
+  background-color: #CBD081; 
+  border: 2px solid #000;
+}
+
+.personalData{
+  background-color: #8A817C; 
+  border: 2px solid #000;
+  border-bottom : 0;
+}
+
+.wbcParams{
+  background-color: #DBF4A7; 
+  border: 2px solid #000;
+  border-bottom : 0;
+  border-top : 0;
+}
+.bloodDiff{
+  background-color: #FFA5AB; 
+  border: 2px solid #000;
+  border-bottom : 0;
+}
+
+.notes{
+  background-color: #F9DBBD; 
+  border: 2px solid #000;
+  border-top : 0;
+}
+  
+
+.loginCont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+
+.patientCont, .doctor_login, .signupCont{
+  background-color: #b9bf94;
+}
+
+.patientLogin{
+  border: none;
+}
+
+/*I have no idea why this is not working, I tried to make the form look nice but it's not working */
+/* So I'm just going to leave it like this for now */
+
+/* Nevermind fixed it */
+.loginform {
+  width: 30%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  border: 1px solid #000; 
+  border-radius: 10px; 
+  background-color: #E8DAB2; 
+}
+
+.signupform{
+  width: 30%; 
+  margin: 50px auto; 
+  padding: 20px; 
+  border: 1px solid #000; 
+  border-radius: 10px; 
+  background-color: #E8DAB2; 
+}
+
+label[for="username"]{
+  margin-top: 10px;
+}
+input[name="username"], 
+input[name="password"],
+input[name="password2"],
+input[name="email"],
+input[name="name"],
+input[name="surname"],
+input[name="PatientName"],
+input[name="PatientSurname"],
+input[name="PatientUsername"],
+input[name="PatientPassword"],
+input[name="PatientEmail"],
+input[name="dob"]
+{
+  width: 50%; 
+  padding: 10px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+.patientFoot{
+  background-color: #333;
+  height: 100px;
+}
+
+
+.doctorLogin{
+  border: none;
+}
+
+body {
+  overflow: auto;
+}
+
+
+.signupFieldset{
+  border: none;
+}
+
+.button1doctor, .button2doctor {
+  display: inline-block;
+  background-color: #34ce4e;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px; 
+  text-decoration: none;
+  padding: 40px 30px; 
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top : 30px;
+}
+
+.button3doctor{
+  display: inline-block;
+  background-color: #d14e9f;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px; 
+  text-decoration: none;
+  padding: 40px 30px; 
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+  margin-top : 30px;
+
+}
+
+.button2doctor {
+  background-color: #e15258;
+  padding: 40px 55px; 
+}
+
+.button1doctor:hover,
+.button1doctor:focus,
+.button1doctor:active,
+.button2doctor:hover,
+.button2doctor:focus,
+.button2doctor:active,
+.button3doctor:hover,
+.button3doctor:focus,
+.button3doctor:active {
+  background-color: #2114cf;
+  color: #fff;
+}
+
+
+  .container2 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top : 80px;
+    border: none;
+    text-align: center;
+    gap: 200px; 
+}
+
+.doctorHomepageBody{
+  background-color: #2bbd68;
+  font-family: "Helvetica", Arial, sans-serif;
+  padding: 40px;
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  padding-top : 0;
+  margin-top : 0;
+  padding-right: 0;
+  padding-left : 0;
+  margin-left : 0;
+}
+
+
+table {
+  margin: 0 auto; 
+  border-collapse: collapse; 
+  width: 40%; 
+  background-color: #f0f0f0; 
+}
+
+th, td {
+  border: 2px solid #000; 
+  padding: 10px; 
+  text-align: center; 
+  font-size : 30px;
+}
+
+th {
+  background-color: #b8b8b8; /* Changes the background color of the header cells */
+}
+
+.results{
+  margin-top: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.resultBody{
+  background-color: #215380;
+}
