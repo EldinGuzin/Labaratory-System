@@ -1,0 +1,46 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Forum</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Forum</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+
+    <section class="section" id="forum-content">
+
+     
+    </section>
+
+  </main>
+
+  <script>
+    $(document).ready(function() {
+      
+      $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        method: 'GET',
+        success: function(data) {
+          
+          var forumContent = $('#forum-content');
+          $.each(data, function(index, post) {
+            var postDiv = $('<div>').addClass('card mb-3');
+            var cardBody = $('<div>').addClass('card-body');
+            var title = $('<h5>').addClass('card-title').text(post.title);
+            var content = $('<p>').addClass('card-text').text(post.body);
+            
+            cardBody.append(title, content);
+            postDiv.append(cardBody);
+            forumContent.append(postDiv);
+          });
+        },
+        error: function(xhr, status, error) {
+          console.error('Error fetching data:', error);
+        }
+      });
+    });
+  </script>
