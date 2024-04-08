@@ -1,0 +1,68 @@
+[
+    {
+      "parameter": "Name",
+      "result": "Alejna",
+      "unit": "N/A"
+    },
+    {
+      "parameter": "Surname",
+      "result": "Hasanagic",
+      "unit": "N/A"
+    },
+    {
+      "parameter": "Hemoglobin",
+      "result": "14.2",
+      "unit": "g/dL"
+    },
+    {
+      "parameter": "RBC Count",
+      "result": "5.2",
+      "unit": "million/μL"
+    },
+    {
+      "parameter": "PCV",
+      "result": "42",
+      "unit": "%"
+    },
+    {
+      "parameter": "MCV",
+      "result": "80",
+      "unit": "fL"
+    },
+    {
+      "parameter": "TLC",
+      "result": "7000",
+      "unit": "/mm³"
+    },
+    {
+      "parameter": "Neutrophils",
+      "result": "60",
+      "unit": "%"
+    },
+    {
+      "parameter": "Lymphocytes",
+      "result": "30",
+      "unit": "%"
+    },
+    {
+      "parameter": "Monocytes",
+      "result": "6",
+      "unit": "%"
+    },
+    {
+      "parameter": "Eosinophils",
+      "result": "3",
+      "unit": "%"
+    },
+    {
+      "parameter": "Basophils",
+      "result": "1",
+      "unit": "%"
+    },
+    {
+      "parameter": "Additional notes",
+      "result": "Patient appears to be in good health. No abnormal findings.",
+      "unit": ""
+    }
+  ]
+  

@@ -1,40 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="styling.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meDoc</title>
-    <link rel="icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Siimple - Bootstrap Landing Page Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style-index.css" rel="stylesheet">
+
+
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to meDoc λ</h1>
-        <img src="images/logo.png" alt="logo" class="logo">
-    </header>
 
-    <p class="intro">meDoc λ, a platform for doctors and patients to share and view medical data.</p>
-    <p class="intro2">Please select your role:</p>
-     
-    <div class="container">
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container-fluid">
 
-        <div class="doctor">
+      <div class="logo">
+        <h1><a href="index.html">MeDoc</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
 
-            <p><a class="button1" href="doctorLogin.html">Doctor</a></p>
-            <img src="images/doctor_icon.png" alt="doctor icon" class="doctor_icon">
-    
-        </div>
-    
-        <div class="patient">
-            
-            <p><a class="button2" href="patient.html">Patient</a></p>
-            <img src="images/patient_icon.png" alt="patient icon" class="patient_icon">
-        </div>
+      <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="#header" class="scrollto">Home</a></li>
+          <li><a href="#about" class="scrollto">About Us</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
 
     </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Welcome to MeDoc</h1>
+      <h2>Please choose</h2>
+
+<div class="text-center">
+  <a href="doctor-main.html">
+    <button type="submit" style="font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 1px; display: inline-block; padding: 8px 30px; border-radius: 50px; transition: 0.5s; margin: 10px; border: none; color: #fff; background: #fd680e;">Doctor page</button>
+  </a>
+  <a href="patientSite/patient-main.html">
+    <button type="submit" style="font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 1px; display: inline-block; padding: 8px 30px; border-radius: 50px; transition: 0.5s; margin: 10px; border: none; color: #fff; background: #fd680e;">Patient page</button>
+  </a>
+
+  </section>
+  <!-- #hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
     
-    <footer>
-        <p>&copy; 2024 Eldin Guzin</p>
-    </footer>
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="assets/img/doctor.png" class="img-fluid" alt="Labaratory Information System">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>Efficient Lab Management with Our LIS</h3>
+            <p class="fst-italic">
+              Streamlining lab processes for enhanced productivity and accuracy.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> Centralized data management for seamless workflow.</li>
+              <li><i class="bx bx-check-double"></i> Real-time analytics for informed decision-making.</li>
+              <li><i class="bx bx-check-double"></i> Comprehensive reporting capabilities for compliance and insights.</li>
+            </ul>
+            <p>
+              Enhance your lab operations with our cutting-edge Laboratory Information System. From sample tracking to result reporting, we provide robust solutions tailored to your needs. Say goodbye to manual processes and hello to efficiency.
+            </p>
+          </div>
+        </div>
+        
+
+      </div>
+    </section>
+                                          
+
+   
+
+   
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>MeDoc</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+       
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+
 </body>
+
 </html>

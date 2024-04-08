@@ -1,0 +1,65 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Forum</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Forum</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section" id="forum-content">
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="answerModal" tabindex="-1" aria-labelledby="answerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="answerModalLabel">Answer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="answerContent"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+$(document).ready(function() {
+$.ajax({
+  url: '../json/forum.json',
+  method: 'GET',
+  success: function(data) {
+    var forumContent = $('#forum-content');
+    $.each(data, function(index, post) {
+      var postDiv = $('<div>').addClass('card mb-3');
+      var cardBody = $('<div>').addClass('card-body');
+      var title = $('<h5>').addClass('card-title').text(post.title);
+      var content = $('<p>').addClass('card-text').text(post.body);
+      
+      cardBody.append(title, content);
+      postDiv.append(cardBody);
+      forumContent.append(postDiv);
+
+      // Add click event to show modal when card is clicked
+      postDiv.click(function() {
+        if (post.answer) {
+          $('#answerContent').text(post.answer);
+          $('#answerModal').modal('show');
+        } else {
+          $('#answerContent').text('No answer provided yet.');
+          $('#answerModal').modal('show');
+        }
+      });
+    });
+  },
+  error: function(xhr, status, error) {
+    console.error('Error fetching data:', error);
+  }
+});
+});
+</script>

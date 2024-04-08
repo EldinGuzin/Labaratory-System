@@ -1,0 +1,172 @@
+
+<section class="section" id="main">
+<div class="pagetitle">
+    <h1>Form Elements</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item">Forms</li>
+        <li class="breadcrumb-item active">Elements</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row" style="justify-content: center;">
+      <div class="col-lg-6">
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Blood test</h5>
+
+            <!-- General Form Elements -->
+            <form>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Surname</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="surname" name="surname" required>
+                </div>
+              </div>
+              
+
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+              </div>
+
+              
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Hemoglobin</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="hemoglobin" name="hemoglobin">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">RBC Count</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="rbcCount" name="rbcCount">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">PCV</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="pcv" name="pcv">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">MCV</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="mcv" name="mcv">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">TLC</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="tlc" name="tlc">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Neutrophils</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="neutrophils" name="neutrophils">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Lymphocytes</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="lymphocytes" name="lymphocytes">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Monocytes</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="monocytes" name="monocytes">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Eosinophils</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="eosinophils" name="eosinophils">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Basophils</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="basophils" name="basophils">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Additional note</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="additionalNote" name="additionalNote">
+                </div>
+              
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form><!-- End General Form Elements -->
+
+          </div>
+        </div>
+
+      </div>
+
+     
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<script>
+  $(document).ready(function() {
+    $('#blood-test-form').submit(function(event) {
+      event.preventDefault(); 
+      
+      // Get form data
+      var formData = {
+        name: $('#name').val(),
+        surname: $('#surname').val(),
+        username: $('#username').val(),
+        hemoglobin: $('#hemoglobin').val(),
+        rbcCount: $('#rbcCount').val(),
+        pcv: $('#pcv').val(),
+        mcv: $('#mcv').val(),
+        tlc: $('#tlc').val(),
+        neutrophils: $('#neutrophils').val(),
+        lymphocytes: $('#lymphocytes').val(),
+        monocytes: $('#monocytes').val(),
+        eosinophils: $('#eosinophils').val(),
+        basophils: $('#basophils').val(),
+        additionalNote: $('#additionalNote').val()
+      };
+
+      // Print form data to console
+      console.log(formData);
+      
+      // Optionally, you can save form data to Local Storage here
+    });
+  });
+</script>
