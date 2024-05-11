@@ -166,21 +166,21 @@
     // Send an AJAX request to submit the form data
     $.ajax({
       type: 'POST',
-      url: '../Labaratory-System/live-backend/submit_blood_test.php',
+      url: '../Labaratory-System/live-backend/submit_blood_test',
       data: formData,
       dataType: 'json',
       success: function(response) {
         // Handle the response from the server
         if (response.success) {
-          // Display a success message or perform any other actions
+          // Display a success message or perform any other actions :)
           console.log('Form submitted successfully');
         } else {
-          // Handle the case where the form submission failed
+          // Handle the case where the form submission failed aka no bueno
           console.error('Form submission failed:', response.message);
         }
       },
       error: function(xhr, status, error) {
-        // Handle AJAX errors
+        // Handle AJAX errors also no bueno
         console.error('AJAX error:', error);
       }
     });

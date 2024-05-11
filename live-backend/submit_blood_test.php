@@ -2,6 +2,8 @@
 // Include the TestResultsDao class
 require_once __DIR__ . "/rest/dao/TestResultsDao.class.php";
 
+
+function submit_blood_test(){
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
@@ -78,4 +80,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Content-Type: application/json");
     echo json_encode($errorResponse);
 }
-?>
+}
+
