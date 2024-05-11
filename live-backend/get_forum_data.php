@@ -4,6 +4,7 @@
 require_once __DIR__ . "/rest/dao/QuestionsDao.class.php";
 require_once __DIR__ . "/rest/dao/AnswersDao.class.php";
 
+function get_forum_data(){
 // Create instances of DAO classes
 $questionsDao = new QuestionsDao();
 $answersDao = new AnswersDao();
@@ -31,9 +32,11 @@ foreach ($questions as $question) {
     ];
 }
 
+return $data;
+
 // Send JSON response
 header('Content-Type: application/json');
 echo json_encode($data);
 
-
+}
 
