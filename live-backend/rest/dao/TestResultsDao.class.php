@@ -1,11 +1,10 @@
 <?php
-require_once __DIR__ . "/BaseDao.class.php"; // Include the BaseDao class
+require_once __DIR__ . "/BaseDao.class.php"; 
 
 class TestResultsDao extends BaseDao {
-    // Define methods to interact with the test_results table
     
     public function __construct() {
-        parent::__construct("test_results"); // Pass the table name to the parent constructor
+        parent::__construct("test_results"); 
     }
 
     public function insert($data) {
@@ -29,6 +28,6 @@ class TestResultsDao extends BaseDao {
     }
     
     
-    // Add more methods here for other CRUD operations if needed
+    // Add more methods here for other CRUD operations 
 }
-?>
+

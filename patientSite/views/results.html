@@ -25,7 +25,97 @@
   </div>
 </section>
 
+
 <script>
+  $(document).ready(function() {
+    // Fetch test results from the new endpoint
+    $.getJSON('../live-backend/test-results', function(data) {
+      var tableBody = $('#test-results-table tbody');
+      $.each(data, function(index, result) {
+        // Create a new row for each parameter
+        var row = $('<tr>');
+        // Add columns for parameter, result, and unit
+        row.append($('<td>').text('Name')); 
+        row.append($('<td>').text(result.name));
+        row.append($('<td>').text(result.surname)); 
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('Hemoglobin'));
+        row.append($('<td>').text(result.hemoglobin));
+        row.append($('<td>').text("g/dL"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('RBC Count'));
+        row.append($('<td>').text(result.rbc_count));
+        row.append($('<td>').text("million/uL"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('pcv'));
+        row.append($('<td>').text(result.pcv));
+        row.append($('<td>').text("percent"));
+        tableBody.append(row);
+        
+        row = $('<tr>');
+        row.append($('<td>').text('mcv'));
+        row.append($('<td>').text(result.mcv));
+        row.append($('<td>').text("fL"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('tlc'));
+        row.append($('<td>').text(result.tlc));
+        row.append($('<td>').text("g/dL"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('neutrophils'));
+        row.append($('<td>').text(result.neutrophils));
+        row.append($('<td>').text("percent"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('lymphocytes'));
+        row.append($('<td>').text(result.lymphocytes));
+        row.append($('<td>').text("percent"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('monocytes'));
+        row.append($('<td>').text(result.monocytes));
+        row.append($('<td>').text("percent"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('eosinophils'));
+        row.append($('<td>').text(result.eosinophils));
+        row.append($('<td>').text("percent"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('basophils'));
+        row.append($('<td>').text(result.basophils));
+        row.append($('<td>').text("percent"));
+        tableBody.append(row);
+
+        row = $('<tr>');
+        row.append($('<td>').text('Additional Notes'));
+        row.append($('<td>').text(result.additional_note));
+        row.append($('<td>').text("N/A"));
+        tableBody.append(row);
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+<!--<script>
   $(document).ready(function() {
     // Fetch test results from the PHP script
     $.getJSON('../live-backend/get_test_results.php', function(data) {
@@ -114,7 +204,7 @@
     });
   });
 </script>
-
+-->
 
 
   
