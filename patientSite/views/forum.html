@@ -29,37 +29,38 @@
 </main>
 
 <script>
-$(document).ready(function() {
-$.ajax({
-  url: '../json/forum.json',
-  method: 'GET',
-  success: function(data) {
-    var forumContent = $('#forum-content');
-    $.each(data, function(index, post) {
-      var postDiv = $('<div>').addClass('card mb-3');
-      var cardBody = $('<div>').addClass('card-body');
-      var title = $('<h5>').addClass('card-title').text(post.title);
-      var content = $('<p>').addClass('card-text').text(post.body);
-      
-      cardBody.append(title, content);
-      postDiv.append(cardBody);
-      forumContent.append(postDiv);
-
-      // Add click event to show modal when card is clicked
-      postDiv.click(function() {
-        if (post.answer) {
-          $('#answerContent').text(post.answer);
-          $('#answerModal').modal('show');
-        } else {
-          $('#answerContent').text('No answer provided yet.');
-          $('#answerModal').modal('show');
-        }
-      });
+  $(document).ready(function() {
+    $.ajax({
+      url: '../live-backend/get_forum_data.php', 
+      method: 'GET',
+      success: function(data) {
+        var forumContent = $('#forum-content');
+        $.each(data, function(index, post) {
+          var postDiv = $('<div>').addClass('card mb-3');
+          var cardBody = $('<div>').addClass('card-body');
+          var title = $('<h5>').addClass('card-title').text(post.title);
+          var content = $('<p>').addClass('card-text').text(post.body);
+          
+          cardBody.append(title, content);
+          postDiv.append(cardBody);
+          forumContent.append(postDiv);
+    
+          
+          postDiv.click(function() {
+            if (post.answer) {
+              $('#answerContent').text(post.answer);
+              $('#answerModal').modal('show');
+            } else {
+              $('#answerContent').text('No answer provided yet.');
+              $('#answerModal').modal('show');
+            }
+          });
+        });
+      },
+      error: function(xhr, status, error) {
+        console.error('Error fetching data:', error);
+      }
     });
-  },
-  error: function(xhr, status, error) {
-    console.error('Error fetching data:', error);
-  }
-});
-});
-</script>
+  });
+  </script>
+  
