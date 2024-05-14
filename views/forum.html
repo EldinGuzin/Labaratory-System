@@ -40,7 +40,7 @@
 <script>
   $(document).ready(function() {
     $.ajax({
-      url: '../Labaratory-System/json/forum.json',
+      url: '../Labaratory-System/live-backend/get_forum_data', 
       method: 'GET',
       success: function(data) {
         var forumContent = $('#forum-content');
@@ -74,4 +74,5 @@
       $('#answerModal').modal('hide');
     });
   });
-  </script>
+</script>
+

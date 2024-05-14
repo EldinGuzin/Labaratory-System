@@ -14,8 +14,7 @@
     <div class="col-xl-4">
       <div class="card">
         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-          <h2>Kevin Anderson</h2>
-          <h3>Doctor</h3>
+          <h2>Your profile</h2>
         </div>
       </div>
     </div>
@@ -42,48 +41,33 @@
 
 
 <script>
-  // Fetch profile data from JSON file
-  fetch('../Labaratory-System/json/profile2.json')
-    .then(response => response.json())
-    .then(data => {
-      // Construct HTML to display profile data
-      const profileHTML = `
-        <h5 class="card-title">Profile Details</h5>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Full Name</div>
-          <div class="col-lg-9 col-md-8">${data[0].name}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Role</div>
-          <div class="col-lg-9 col-md-8">${data[0].role}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Company</div>
-          <div class="col-lg-9 col-md-8">${data[0].company}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Job</div>
-          <div class="col-lg-9 col-md-8">${data[0].job}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Country</div>
-          <div class="col-lg-9 col-md-8">${data[0].country}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Address</div>
-          <div class="col-lg-9 col-md-8">${data[0].address}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Phone</div>
-          <div class="col-lg-9 col-md-8">${data[0].phone}</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 label">Email</div>
-          <div class="col-lg-9 col-md-8">${data[0].email}</div>
-        </div>
-      `;
-      // Populate profile overview content
-      document.getElementById('profileData').innerHTML = profileHTML;
-    })
-    .catch(error => console.error('Error fetching profile data:', error));
+  $(document).ready(function() {
+    $.ajax({
+      url: '../Labaratory-System/live-backend/get_doctor_data', // Update URL to point to your PHP endpoint
+      method: 'GET',
+      success: function(data) {
+        // Construct HTML to display profile data
+        const profileHTML = `
+          <h5 class="card-title">Profile Details</h5>
+          <div class="row">
+            <div class="col-lg-3 col-md-4 label">Full Name</div>
+            <div class="col-lg-9 col-md-8">${data[0].name}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-4 label">Email</div>
+            <div class="col-lg-9 col-md-8">${data[0].email}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-4 label">Username</div>
+            <div class="col-lg-9 col-md-8">${data[0].username}</div>
+          </div>
+        `;
+        // Populate profile overview content
+        $('#profileData').html(profileHTML);
+      },
+      error: function(xhr, status, error) {
+        console.error('Error fetching profile data:', error);
+      }
+    });
+  });
 </script>
