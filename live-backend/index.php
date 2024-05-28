@@ -13,6 +13,9 @@ require_once __DIR__ . '/rest/routes/doctor_routes.php';
 require_once __DIR__ . '/rest/routes/patient_routes.php';
 
 
+
+
+
 Flight::start();
 
 
