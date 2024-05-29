@@ -43,8 +43,9 @@
 <script>
   $(document).ready(function() {
     $.ajax({
-      url: '../Labaratory-System/live-backend/get_doctor_data', // Update URL to point to your PHP endpoint
+      url: '../Labaratory-System/live-backend/get_doctor_data', 
       method: 'GET',
+      application: 'application/json',
       success: function(data) {
         // Construct HTML to display profile data
         const profileHTML = `

@@ -77,34 +77,49 @@
 
       <script>
         $(document).ready(function() {
-          $('form').submit(function(event) {
-            event.preventDefault(); // Prevent form submission
-            
-            // Get form data
-            var name = $('#yourName').val().trim();
-            var email = $('#yourEmail').val().trim();
-            var username = $('#yourUsername').val().trim();
-            var password = $('#yourPassword').val().trim();
-            
-            // Check if all required fields are populated
-            if (name !== '' && email !== '' && username !== '' && password !== '') {
-              // Print form data to console
-              var formData = {
-                name: name,
-                email: email,
-                username: username,
-                password: password
-              };
-              console.log(formData);
-              
-              // Redirect to another site
-              window.location.href = 'http://localhost/MeDoc/doctor-main.html#login'; 
-            } else {
-              alert('Please populate all required fields before submitting.');
-            }
-          });
+            $('form').submit(function(event) {
+                event.preventDefault(); // Prevent form submission
+                
+                // Get form data
+                var name = $('#yourName').val().trim();
+                var email = $('#yourEmail').val().trim();
+                var username = $('#yourUsername').val().trim();
+                var password = $('#yourPassword').val().trim();
+                
+                // Check if all required fields are populated
+                if (name !== '' && email !== '' && username !== '' && password !== '') {
+                    // Create form data object
+                    var formData = new FormData();
+                    formData.append('name', name);
+                    formData.append('email', email);
+                    formData.append('username', username);
+                    formData.append('password', password);
+                    
+                    // Send AJAX request
+                    $.ajax({
+                        url: 'http://localhost/Labaratory-System/live-backend/register',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(data) {
+                            // Handle successful registration
+                            console.log('Registration successful:', data);
+                            alert('Registration successful!'); // Provide appropriate feedback to the user
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error
+                            console.error('Registration failed:', error);
+                            alert('Registration failed. Please try again.'); // Provide appropriate feedback to the user
+                        }
+                    });
+                } else {
+                    alert('Please populate all required fields before submitting.');
+                }
+            });
         });
-      </script>
+    </script>
+    
       
       
       
