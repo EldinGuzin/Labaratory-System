@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum</title>
+  <!-- Include Bootstrap CSS and jQuery -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Forum</h1>
@@ -29,38 +41,79 @@
 </main>
 
 <script>
-  $(document).ready(function() {
-    $.ajax({
-      url: '../live-backend/get_forum_data', 
-      method: 'GET',
-      success: function(data) {
-        var forumContent = $('#forum-content');
-        $.each(data, function(index, post) {
-          var postDiv = $('<div>').addClass('card mb-3');
-          var cardBody = $('<div>').addClass('card-body');
-          var title = $('<h5>').addClass('card-title').text(post.title);
-          var content = $('<p>').addClass('card-text').text(post.body);
-          
-          cardBody.append(title, content);
-          postDiv.append(cardBody);
-          forumContent.append(postDiv);
-    
-          
-          postDiv.click(function() {
-            if (post.answer) {
-              $('#answerContent').text(post.answer);
+$(document).ready(function() {
+  $.ajax({
+    url: '../live-backend/get_forum_data',
+    method: 'GET',
+    success: function(response) {
+      console.log('Raw Response:', response); // Log the raw response data
+      var forumContent = $('#forum-content');
+
+      // Iterate over each forum post in the response
+      response.forEach(function(post) {
+        // Create HTML elements for the forum post
+        var postDiv = $('<div>').addClass('card mb-3').data('question-id', post.question_id);
+        var cardBody = $('<div>').addClass('card-body');
+        var title = $('<h5>').addClass('card-title').text(post.title);
+        var content = $('<p>').addClass('card-text').text(post.body);
+
+        // Append title and content to the card body
+        cardBody.append(title, content);
+        // Append card body to the post div
+        postDiv.append(cardBody);
+        // Append post div to the forum content section
+        forumContent.append(postDiv);
+
+        // Handle click event on the post div
+        postDiv.click(function() {
+          // Fetch the answer for the clicked question
+          $.ajax({
+            url: '../live-backend/get_answer.php',
+            method: 'GET',
+            data: { question_id: post.question_id },
+            success: function(answerResponse) {
+              console.log('Answer Response:', answerResponse); // Log the answer response
+              // Check if an answer is provided
+              if (typeof answerResponse.answer === 'string') {
+                // Convert the answer string to an object
+                var answerObject = { body: answerResponse.answer };
+                // Set the answer content in the modal
+                $('#answerContent').text(answerObject.body);
+              } else if (answerResponse.answer) {
+                // Set the answer content in the modal
+                $('#answerContent').text(answerResponse.answer.body);
+              } else {
+                // If no answer, display a message
+                $('#answerContent').text('No answer provided yet.');
+              }
+              // Show the modal
               $('#answerModal').modal('show');
-            } else {
-              $('#answerContent').text('No answer provided yet.');
+            },
+            error: function(xhr, status, error) {
+              console.error('Error fetching answer:', error);
+              // Display an error message in the modal
+              $('#answerContent').text('Error fetching answer.');
+              // Show the modal
               $('#answerModal').modal('show');
             }
           });
         });
-      },
-      error: function(xhr, status, error) {
-        console.error('Error fetching data:', error);
-      }
-    });
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error('Error fetching data:', error);
+    }
   });
-  </script>
-  
+
+  // Close the modal when the close button or outside the modal is clicked
+  $('#answerModal').on('hidden.bs.modal', function() {
+    $('#answerContent').text(''); // Clear the modal content
+  });
+});
+
+
+
+
+</script>
+</body>
+</html>

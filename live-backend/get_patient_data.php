@@ -34,7 +34,7 @@ function get_patient_Data() {
 // Call the function if the script is executed directly , I have no idea how this if statement works but I think it is checking if the file is being executed directly
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     header("Content-Type: application/json");
-    echo json_encode(get_doctor_data());
+    echo json_encode(get_patient_data());
 }
 
 // I just copied everything from the get_test_results.php file and changed the function name and the dao class name

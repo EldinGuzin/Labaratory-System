@@ -12,6 +12,15 @@ require_once __DIR__ . '/rest/routes/doctor_routes.php';
 
 require_once __DIR__ . '/rest/routes/patient_routes.php';
 
+require_once __DIR__ . '/rest/routes/auth_routes.php';
+
+
+
+Flight::route('*', function(){
+    $method = Flight::request()->method;
+    $url = Flight::request()->url;
+    error_log("Request: $method $url");
+});
 
 Flight::start();
 

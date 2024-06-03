@@ -68,26 +68,40 @@
   $(document).ready(function() {
     $('form').submit(function(event) {
       event.preventDefault(); // Prevent form submission
-      
+
       // Get form data
       var loginUsername = $('#loginUsername').val().trim();
       var loginPassword = $('#loginPassword').val().trim();
       
       // Check if all required fields are populated
-      if (loginUsername === 'eldin' && loginPassword === '1234') {
-        // Print form data to console
-        var formData = {
-          loginUsername: loginUsername,
-          loginPassword: loginPassword
-        };
-        console.log(formData);
-        
-        // Redirect to another site
-        window.location.href = 'http://localhost/MeDoc/doctor-main.html#dashboard';
-        alert('Login successful'); 
+      if (loginUsername && loginPassword) {
+        // Send an AJAX POST request to the login route
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost/Labaratory-System/live-backend/login', // Make sure this matches your server route
+          data: JSON.stringify({
+            username: loginUsername,
+            password: loginPassword
+          }),
+          contentType: 'application/json',
+          success: function(response) {
+            // On successful login, redirect to the dashboard
+            window.location.href = 'http://localhost/Labaratory-System/doctor-main.html#dashboard';
+            alert('Login successful');
+          },
+          error: function(xhr, status, error) {
+            // Handle errors
+            if (xhr.status === 401 || xhr.status === 404) {
+              alert('Invalid username or password. Please try again.');
+            } else {
+              alert('An error occurred. Please try again later.');
+            }
+          }
+        });
       } else {
-        alert('Invalid username or password. Please try again.');
+        alert('Please enter both username and password.');
       }
     });
   });
 </script>
+

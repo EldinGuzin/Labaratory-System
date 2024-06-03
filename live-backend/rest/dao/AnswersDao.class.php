@@ -6,11 +6,9 @@ class AnswersDao extends BaseDao {
         parent::__construct("answers");
     }
 
-    public function getAllAnswers() {
-        $query = "SELECT * FROM answers";
-        return $this->query($query, []);
+    public function getAnswerbyQuestionId($question_id) {
+        return $this->query_unique("SELECT * FROM answers WHERE question_id = :question_id", ["question_id" => $question_id]);
     }
-
     
 }
-?>
+

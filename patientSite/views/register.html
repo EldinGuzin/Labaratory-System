@@ -1,6 +1,5 @@
 <main>
   <div class="container">
-
     <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
       <div class="container">
         <div class="row justify-content-center">
@@ -29,18 +28,16 @@
                     <div class="invalid-feedback">Please, enter your name!</div>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-12">
-                      <label for="yourSurname" class="form-label">Your surname</label>
-                      <input type="text" name="surname" class="form-control" id="yourSurname" required>
-                      <div class="invalid-feedback">Please, enter your Surname!</div>
-                    </div>
-
+                  <div class="col-12">
+                    <label for="yourSurname" class="form-label">Your Surname</label>
+                    <input type="text" name="surname" class="form-control" id="yourSurname" required>
+                    <div class="invalid-feedback">Please, enter your Surname!</div>
+                  </div>
 
                   <div class="col-12">
                     <label for="yourEmail" class="form-label">Your Email</label>
                     <input type="email" name="email" class="form-control" id="yourEmail" required>
-                    <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                    <div class="invalid-feedback">Please enter a valid Email address!</div>
                   </div>
 
                   <div class="col-12">
@@ -58,7 +55,6 @@
                     <div class="invalid-feedback">Please enter your password!</div>
                   </div>
 
-                  
                   <div class="col-12">
                     <button class="btn btn-primary w-100" type="submit">Create Account</button>
                   </div>
@@ -76,12 +72,7 @@
           </div>
         </div>
       </div>
-
     </section>
-
-
-
-    
 
     <script>
       $(document).ready(function() {
@@ -90,29 +81,42 @@
           
           // Get form data
           var name = $('#yourName').val().trim();
+          var surname = $('#yourSurname').val().trim();
           var email = $('#yourEmail').val().trim();
           var username = $('#yourUsername').val().trim();
           var password = $('#yourPassword').val().trim();
           
           // Check if all required fields are populated
-          if (name !== '' && email !== '' && username !== '' && password !== '') {
-            // Print form data to console
+          if (name !== '' && surname !== '' && email !== '' && username !== '' && password !== '') {
             var formData = {
               name: name,
+              surname: surname,
               email: email,
               username: username,
               password: password
             };
+
             console.log(formData);
             
-            // Redirect to another site
-            window.location.href = 'http://localhost/MeDoc/patientSite/patient-main.html#login'; 
+            // Send the form data to the backend using AJAX
+            $.ajax({
+              url: '../live-backend/register',
+              type: 'POST',
+              contentType: 'application/json',
+              data: JSON.stringify(formData),
+              success: function(response) {
+                console.log(response);
+                window.location.href = 'http://localhost/MeDoc/patientSite/patient-main.html#login';
+              },
+              error: function(xhr, status, error) {
+                alert('Error: ' + xhr.responseJSON.message);
+              }
+            });
           } else {
             alert('Please populate all required fields before submitting.');
           }
         });
       });
     </script>
-    
-    
-    
+  </div>
+</main>
