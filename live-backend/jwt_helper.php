@@ -25,14 +25,14 @@ function generateJWT($userId, $username) {
         ]
     ];
 
-    $jwtToken = JWT::encode($payload, JWT_SECRET, 'HS256');
+    $jwtToken = JWT::encode($payload, Config::JWT_SECRET(), 'HS256');
     return $jwtToken;
 }
 
 function decodeJWT($jwtToken) {
     $algorithms = ['HS256'];
     try {
-        $decoded = JWT::decode($jwtToken, new Key(JWT_SECRET, 'HS256'));
+        $decoded = JWT::decode($jwtToken, new Key(Config::JWT_SECRET(), 'HS256'));
         return $decoded;
     } catch (Exception $e) {
         return null;
